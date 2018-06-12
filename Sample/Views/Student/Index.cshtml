@@ -1,0 +1,48 @@
+﻿@model Sample.ViewModel.StudentIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Full Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Date of Birth
+            </th>
+            <th>
+                Department
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model.Students)
+        {
+            string path = "/Department/Details/"+c.DepartmentId;
+           string gender = c.Gender ? "Male" : "Female";
+                
+            <tr>
+                <td>
+                    @c.FirstName @c.LastName
+                </td>
+                <td>
+                    @gender
+                </td>
+                <td>
+                    @c.DateOfBirth.Value.ToShortDateString();
+                </td>
+                <td>
+                   <a href=@path>@c.Department.Name</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

@@ -1,0 +1,40 @@
+﻿@model Sample.ViewModel.CourseIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Code
+            </th>
+            <th>
+                Units
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var c in Model.Courses)
+        {
+            <tr>
+                <td>
+                    @c.Title
+                </td>
+                <td>
+                    @c.Code
+                </td>
+                <td>
+                    @c.Units
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

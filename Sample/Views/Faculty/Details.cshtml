@@ -1,0 +1,45 @@
+﻿@model Sample.ViewModel.FacultyDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+    string path = "/University/Details/" + Model.UniversityId;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FacultyDetailsViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.University)
+        </dt>
+
+        <dd>
+           <a href=@path>@Html.DisplayFor(model => model.University)</a> 
+        </dd>
+
+     
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
